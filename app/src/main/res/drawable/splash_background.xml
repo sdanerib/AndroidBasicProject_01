@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/kiwiMedium"/>
+
+    <!--IMPORTANTE:
+
+        - Abrir el proyecto en modo Project
+        - Ver la estructura de drawable
+        - Se puede apreciar que se debe definir en:
+
+         * drawable: splash_background.xml (el presente file, aquí se ponen los colores)
+
+         * drawable-v24: hay un file ic_laucher_foreground.xml
+            No he definido nada en este punto
+
+         * mipmap-anydpi-v26
+            * se coloco el ic_duolingo_launcher.xml donde estan las def del foreground/background del icono
+            * Creo que debe colocarse esto para que internamente pueda referenciar
+                al ícono del tamaño completo
+
+         * en cada directorio mipmap-<dpi> se colocan los iconos del tamano correcto
+            > ldpi	    120 dpi
+            > mdpi	    160 dpi
+            > tvdpi	    213 dpi
+            > hdpi	    240 dpi
+            > xhdpi	    320 dpi
+            > xxhdpi	480 dpi
+            > xxxhdpi	640 dpi
+
+        * En el archivo values/styles.xml se debe definir el estilo del Splash
+            referenciando a @drawable/splash_background
+            y se establece el nombre de este estilo como SplashTheme
+
+        * En el AndroidManifest.xml se debe definir el activity del Splash
+            donde se establece:
+             android:name = <NombreDelSplashActivity>
+             android:theme = @style/SplashTheme
+            Adicionalmente se debe setear como ActivityPrincipal
+
+        * Se debe crear un activity que permita que se muestre el Splash
+            Se debe crear un Intent para abrir el sgte Activity
+            y se debe colocar finish() para cerrar este activity
+
+    -->
+
+
+    <item>
+        <bitmap
+            android:src="@mipmap/ic_duolingo_launcher"
+            android:gravity="center"
+            />
+    </item>
+
+</layer-list>
